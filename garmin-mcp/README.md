@@ -20,15 +20,22 @@ Apri **Terminale** ed esegui:
 ```bash
 # 1) uv (gestisce Python e dipendenze in automatico)
 curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.local/bin/env   # oppure chiudi e riapri il Terminale
 
 # 2) scarica il repository (branch con il server Garmin)
 git clone -b claude/connect-claude-account-y2xm0n https://github.com/mixpix83/MITDT.git ~/MITDT
 
 # 3) salva la chiave Personal API in un file leggibile solo da te
 mkdir -p ~/.config/garmin
-(umask 077; read -rsp "Incolla la chiave Garmin e premi Invio: " K; echo; \
+(umask 077; read -rs "K?Incolla la chiave Garmin e premi Invio: "; echo; \
   printf '%s' "$K" > ~/.config/garmin/connect-personal-api-key)
+
+# verifica (non mostra la chiave): deve essere -rw------- e dimensione > 0
+ls -l ~/.config/garmin/connect-personal-api-key
 ```
+
+Il comando è per **zsh**, il Terminale predefinito del Mac. In bash usa invece
+`read -rsp "Incolla la chiave…: " K`.
 
 La chiave non viene mostrata a schermo né salvata nella cronologia del terminale.
 
