@@ -22,8 +22,8 @@ Apri **Terminale** ed esegui:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.local/bin/env   # oppure chiudi e riapri il Terminale
 
-# 2) scarica il repository (branch con il server Garmin)
-git clone -b claude/connect-claude-account-y2xm0n https://github.com/mixpix83/MITDT.git ~/MITDT
+# 2) scarica il repository
+git clone https://github.com/mixpix83/MITDT.git ~/MITDT
 
 # 3) salva la chiave Personal API in un file leggibile solo da te
 mkdir -p ~/.config/garmin
